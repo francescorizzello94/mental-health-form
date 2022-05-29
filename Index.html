@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mental health patient form validation</title>
+  <link rel="stylesheet" href="Stylesheet.css">
+  <script src="https://kit.fontawesome.com/c4254e24a8.js"> crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <form>
+
+      <div class="input-group">
+        <input type="text" label="name" id="name" placeholder="Enter your full name" onkeyup="validateName()" required>
+        <span id="name-error"></span>
+      </div>
+
+      <div class="input-group">
+        <input type="tel" label="phone-number" id="phone-number" placeholder="Enter your phone number with prefix" onkeyup="validatePhone()" required>
+        <span id="phone-error"></span>
+      </div>
+
+      <div class="input-group">
+        <input type="email" label="email" id="email" placeholder="Enter your email address" onkeyup="validateEmail()" required>
+        <span id="email-error"></span>
+      </div><br>
+
+      <div id="information">
+        <p>Next, select the symptoms you are exhibiting.<br>
+          Pease consider that <u>symptoms must persist for a reasonable amount of time (at least two weeks)</u> and
+          <u>must impair daily functioning</u>.<br><br>
+          <details>
+            <summary> <b><u>Are you feeling suicidal? </u></b></summary><br>
+          <div id="suicide-help">
+          <br><b>Take three deep breaths.<br>
+            1<br>
+            2<br>
+            3<br>
+            Now, contact your local suicide emergency hotline.</b><br><br>
+          </div>
+          </details><br>
+          <b>Please select at least one symptom from the checkbox.</b> <br>While we understand that the list of symptoms is by no means exhaustive, selecting the symptom closest to what you are experiencing
+          helps us direct our efforts efficiently.<br>Please provide any relevant clarification in the text area below.
+        </p>
+      </div><br>
+
+      <div id="checkbox">
+        <input type="checkbox" label="anxiety" id="anxiety" name="symptom1" value="Anxiety"> Anxiety <br>
+        <input type="checkbox" label="sadness" id="sadness" name="symptom2" value="Sadness"> Sadness <br>
+        <input type="checkbox" label="mood-swings" id="mood-swings" name="symptom3" value="Mood Swings"> Mood Swings<br>
+        <input type="checkbox" label="hallucinations" id="hallucinations" name="symptom4" value="Hallucations"> Hallucinations<br>
+        <input type="checkbox" label="delusions" id="delusions" name="symptom5" value="Delusions"> Delusions <br>
+        <input type="checkbox" label="self-harm" id="self-harm" name="symptom6" value="Self-harm"> Self-harm<br>
+        <input type="checkbox" label="anger" id="anger" name="symptom7" value="Anger"> Anger <br>
+        <input type="checkbox" label="irritabilty" id="irritability" name="symptom8" value="Irritability"> Irritability
+        <br>
+        <input type="checkbox" label="boredom" id="boredom" name="symptom9" value="Boredom"> Boredom <br>
+        <input type="checkbox" label="emptiness" id="emptiness" name="symptom10" value="Emptiness"> Emptiness <br>
+      </div><br>
+
+      <div class="input-group">
+        <textarea label="message" id="message" name="message"
+      placeholder="Enter a detailed description of your symptoms and past medical history" rows="4" cols="50" onkeyup="validateMessage()"></textarea>
+      <span id="message-error"></span>
+      </div>
+
+      <button onclick="return validateForm()" id="submit-button"> Submit </button>
+      <span id="submit-error"></span>
+
+    </form>
+  </div>
+<script src="main.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+  integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+</html>
